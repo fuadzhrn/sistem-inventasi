@@ -1,0 +1,86 @@
+{% extends "layouts/admin_base.html" %}
+
+{% block title %}Edit Produk Investasi{% endblock %}
+{% block page_title %}Edit Produk{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="page-header-left">
+        <h2>Edit Produk Investasi</h2>
+        <p>Perbarui informasi produk investasi yang sudah terdaftar.</p>
+    </div>
+    <a href="{{ url_for('admin_produk_index') }}" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Kembali
+    </a>
+</div>
+
+<div class="card form-card">
+    <div class="card-header">
+        <h3><i class="bi bi-pencil-square"></i> Formulir Edit Produk</h3>
+        <span style="font-size:12px;color:var(--text-secondary);">ID Produk: #001</span>
+    </div>
+    <div class="card-body">
+        <form action="#" method="POST">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label class="form-label" for="nama_produk">
+                        Nama Produk <span class="required">*</span>
+                    </label>
+                    <input type="text" id="nama_produk" name="nama_produk"
+                           class="form-control" value="Reksadana Pasar Uang">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="jenis_produk">
+                        Jenis Produk <span class="required">*</span>
+                    </label>
+                    <select id="jenis_produk" name="jenis_produk" class="form-control">
+                        <option value="Reksadana" selected>Reksadana</option>
+                        <option value="Obligasi">Obligasi</option>
+                        <option value="Saham">Saham</option>
+                        <option value="Deposito">Deposito</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="risiko">
+                        Tingkat Risiko <span class="required">*</span>
+                    </label>
+                    <select id="risiko" name="risiko" class="form-control">
+                        <option value="Rendah" selected>Rendah</option>
+                        <option value="Sedang">Sedang</option>
+                        <option value="Tinggi">Tinggi</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="harga_unit_produk">
+                        Harga per Unit (Rp) <span class="required">*</span>
+                    </label>
+                    <input type="number" id="harga_unit_produk" name="harga_unit_produk"
+                           class="form-control" value="100000" min="0">
+                </div>
+
+                <div class="form-group form-grid-full">
+                    <label class="form-label" for="deskripsi">Deskripsi Produk</label>
+                    <textarea id="deskripsi" name="deskripsi" class="form-control">Produk reksadana yang berinvestasi di instrumen pasar uang jangka pendek. Cocok untuk investor pemula dengan profil risiko rendah.</textarea>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-warning">
+                    <i class="bi bi-arrow-clockwise"></i> Update
+                </button>
+                <a href="{{ url_for('admin_produk_index') }}" class="btn btn-secondary">
+                    <i class="bi bi-x"></i> Batal
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

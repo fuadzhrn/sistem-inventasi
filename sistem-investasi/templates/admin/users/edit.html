@@ -1,0 +1,86 @@
+{% extends "layouts/admin_base.html" %}
+
+{% block title %}Edit User{% endblock %}
+{% block page_title %}Edit User{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="page-header-left">
+        <h2>Edit User</h2>
+        <p>Perbarui informasi akun user yang sudah terdaftar.</p>
+    </div>
+    <a href="{{ url_for('admin_users_index') }}" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Kembali
+    </a>
+</div>
+
+<div class="card form-card">
+    <div class="card-header">
+        <h3><i class="bi bi-pencil-square"></i> Formulir Edit User</h3>
+        <span style="font-size:12px;color:var(--text-secondary);">ID User: #002</span>
+    </div>
+    <div class="card-body">
+        <form action="#" method="POST">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label class="form-label" for="username">
+                        Username <span class="required">*</span>
+                    </label>
+                    <input type="text" id="username" name="username"
+                           class="form-control" value="ahmad">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">
+                        Password Baru
+                    </label>
+                    <input type="password" id="password" name="password"
+                           class="form-control" placeholder="Kosongkan jika tidak diubah">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="role">
+                        Role <span class="required">*</span>
+                    </label>
+                    <select id="role" name="role" class="form-control">
+                        <option value="admin">Admin</option>
+                        <option value="user" selected>User</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="nasabah_id">Pilih Nasabah</label>
+                    <select id="nasabah_id" name="nasabah_id" class="form-control">
+                        <option value="" disabled>-- Pilih Nasabah --</option>
+                        <option value="1" selected>Ahmad Rizki</option>
+                        <option value="2">Siti Aminah</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="status">
+                        Status <span class="required">*</span>
+                    </label>
+                    <select id="status" name="status" class="form-control">
+                        <option value="aktif" selected>Aktif</option>
+                        <option value="nonaktif">Nonaktif</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-warning">
+                    <i class="bi bi-arrow-clockwise"></i> Update
+                </button>
+                <a href="{{ url_for('admin_users_index') }}" class="btn btn-secondary">
+                    <i class="bi bi-x"></i> Batal
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

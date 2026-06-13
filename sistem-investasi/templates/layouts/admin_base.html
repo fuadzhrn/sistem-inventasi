@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Admin{% endblock %} — Sistem Investasi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Brand -->
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="bi bi-shield-check"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-name">InvestSi</span>
+                <span class="brand-role">Admin Panel</span>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <p class="nav-label">Menu Utama</p>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="{{ url_for('admin_dashboard') }}" class="nav-link" data-path="/admin/dashboard">
+                            <i class="bi bi-speedometer2 nav-icon"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="nav-section">
+                <p class="nav-label">Manajemen Data</p>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="{{ url_for('admin_nasabah_index') }}" class="nav-link" data-path="/admin/nasabah">
+                            <i class="bi bi-people nav-icon"></i>
+                            <span class="nav-text">Data Nasabah</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('admin_users_index') }}" class="nav-link" data-path="/admin/users">
+                            <i class="bi bi-person-gear nav-icon"></i>
+                            <span class="nav-text">Data User</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('admin_produk_index') }}" class="nav-link" data-path="/admin/produk">
+                            <i class="bi bi-box-seam nav-icon"></i>
+                            <span class="nav-text">Produk Investasi</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('admin_transaksi_index') }}" class="nav-link" data-path="/admin/transaksi">
+                            <i class="bi bi-cash-stack nav-icon"></i>
+                            <span class="nav-text">Transaksi</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('admin_portofolio_index') }}" class="nav-link" data-path="/admin/portofolio">
+                            <i class="bi bi-pie-chart nav-icon"></i>
+                            <span class="nav-text">Portofolio</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="nav-section">
+                <p class="nav-label">Lainnya</p>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="{{ url_for('admin_laporan_index') }}" class="nav-link" data-path="/admin/laporan">
+                            <i class="bi bi-file-earmark-text nav-icon"></i>
+                            <span class="nav-text">Laporan</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('logout') }}" class="nav-link nav-link-danger">
+                            <i class="bi bi-box-arrow-right nav-icon"></i>
+                            <span class="nav-text">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </aside>
+
+    <!-- Overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ===== MAIN WRAPPER ===== -->
+    <div class="main-wrapper" id="mainWrapper">
+
+        <!-- ===== TOPBAR ===== -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="btn-toggle-sidebar" id="btnToggleSidebar" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div>
+                    <h1 class="page-title">{% block page_title %}Halaman{% endblock %}</h1>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-admin-badge">
+                    <i class="bi bi-shield-fill-check"></i>
+                    Administrator
+                </div>
+                <div class="topbar-user">
+                    <div class="user-avatar">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Admin</span>
+                        <span class="user-role">Super Admin</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== CONTENT ===== -->
+        <main class="content-area">
+            {% block content %}{% endblock %}
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="content-footer">
+            <p>&copy; 2026 Sistem Manajemen Nasabah, Transaksi &amp; Portofolio Investasi — Admin Panel</p>
+        </footer>
+
+    </div>
+
+    <!-- Admin JS -->
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

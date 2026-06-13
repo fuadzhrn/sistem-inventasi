@@ -1,0 +1,86 @@
+{% extends "layouts/admin_base.html" %}
+
+{% block title %}Edit Nasabah{% endblock %}
+{% block page_title %}Edit Nasabah{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="page-header-left">
+        <h2>Edit Nasabah</h2>
+        <p>Perbarui data nasabah yang sudah terdaftar dalam sistem.</p>
+    </div>
+    <a href="{{ url_for('admin_nasabah_index') }}" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Kembali
+    </a>
+</div>
+
+<div class="card form-card">
+    <div class="card-header">
+        <h3><i class="bi bi-pencil-square"></i> Formulir Edit Nasabah</h3>
+        <span style="font-size:12px;color:var(--text-secondary);">ID Nasabah: #001</span>
+    </div>
+    <div class="card-body">
+        <form action="#" method="POST">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label class="form-label" for="nama_nasabah">
+                        Nama Lengkap <span class="required">*</span>
+                    </label>
+                    <input type="text" id="nama_nasabah" name="nama_nasabah"
+                           class="form-control" value="Ahmad Rizki">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="nik">
+                        NIK <span class="required">*</span>
+                    </label>
+                    <input type="text" id="nik" name="nik"
+                           class="form-control" value="327xxxxxxxxxxxxx" maxlength="16">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">
+                        Alamat Email <span class="required">*</span>
+                    </label>
+                    <input type="email" id="email" name="email"
+                           class="form-control" value="ahmad@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="no_hp">
+                        Nomor HP <span class="required">*</span>
+                    </label>
+                    <input type="text" id="no_hp" name="no_hp"
+                           class="form-control" value="081234567890">
+                </div>
+
+                <div class="form-group form-grid-full">
+                    <label class="form-label" for="alamat">Alamat</label>
+                    <textarea id="alamat" name="alamat" class="form-control">Jakarta</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="tanggal_daftar">
+                        Tanggal Daftar <span class="required">*</span>
+                    </label>
+                    <input type="date" id="tanggal_daftar" name="tanggal_daftar"
+                           class="form-control" value="2026-06-12">
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-warning">
+                    <i class="bi bi-arrow-clockwise"></i> Update
+                </button>
+                <a href="{{ url_for('admin_nasabah_index') }}" class="btn btn-secondary">
+                    <i class="bi bi-x"></i> Batal
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

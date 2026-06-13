@@ -1,0 +1,108 @@
+{% extends "layouts/admin_base.html" %}
+
+{% block title %}Tambah Transaksi{% endblock %}
+{% block page_title %}Tambah Transaksi{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="page-header-left">
+        <h2>Tambah Transaksi</h2>
+        <p>Catat transaksi investasi nasabah ke dalam sistem.</p>
+    </div>
+    <a href="{{ url_for('admin_transaksi_index') }}" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Kembali
+    </a>
+</div>
+
+<div class="card form-card">
+    <div class="card-header">
+        <h3><i class="bi bi-cash-stack"></i> Formulir Transaksi</h3>
+    </div>
+    <div class="card-body">
+        <form action="#" method="POST">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label class="form-label" for="nasabah_id">
+                        Pilih Nasabah <span class="required">*</span>
+                    </label>
+                    <select id="nasabah_id" name="nasabah_id" class="form-control">
+                        <option value="" disabled selected>-- Pilih Nasabah --</option>
+                        <option value="1">Ahmad Rizki</option>
+                        <option value="2">Siti Aminah</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="produk_id">
+                        Pilih Produk Investasi <span class="required">*</span>
+                    </label>
+                    <select id="produk_id" name="produk_id" class="form-control">
+                        <option value="" disabled selected>-- Pilih Produk --</option>
+                        <option value="1">Reksadana Pasar Uang</option>
+                        <option value="2">Obligasi Negara</option>
+                        <option value="3">Saham ABC</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="jenis_transaksi">
+                        Jenis Transaksi <span class="required">*</span>
+                    </label>
+                    <select id="jenis_transaksi" name="jenis_transaksi" class="form-control">
+                        <option value="" disabled selected>-- Pilih Jenis --</option>
+                        <option value="beli">Beli</option>
+                        <option value="jual">Jual</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="tanggal_transaksi">
+                        Tanggal Transaksi <span class="required">*</span>
+                    </label>
+                    <input type="date" id="tanggal_transaksi" name="tanggal_transaksi" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="jumlah_unit">
+                        Jumlah Unit <span class="required">*</span>
+                    </label>
+                    <input type="number" id="jumlah_unit" name="jumlah_unit"
+                           class="form-control" placeholder="Masukkan jumlah unit" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="harga_unit">
+                        Harga per Unit (Rp) <span class="required">*</span>
+                    </label>
+                    <input type="text" id="harga_unit" name="harga_unit"
+                           class="form-control" placeholder="Contoh: 100.000">
+                </div>
+
+                <div class="form-group form-grid-full">
+                    <label class="form-label" for="total_transaksi">Total Transaksi (Rp)</label>
+                    <input type="text" id="total_transaksi" name="total_transaksi"
+                           class="form-control" placeholder="Otomatis terisi" readonly
+                           style="background:var(--bg-main);font-weight:600;color:var(--color-primary);">
+                    <span class="form-hint">
+                        <i class="bi bi-info-circle" style="color:var(--color-primary);"></i>
+                        Total dihitung otomatis dari Jumlah Unit × Harga per Unit.
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check-lg"></i> Simpan
+                </button>
+                <a href="{{ url_for('admin_transaksi_index') }}" class="btn btn-secondary">
+                    <i class="bi bi-x"></i> Batal
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

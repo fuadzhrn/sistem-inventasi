@@ -1,0 +1,160 @@
+{% extends "layouts/admin_base.html" %}
+
+{% block title %}Dashboard Admin{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<!-- Welcome Banner -->
+<div class="welcome-banner">
+    <p class="welcome-greeting">Selamat datang, Admin 👋</p>
+    <p class="welcome-sub">Pantau seluruh data nasabah, transaksi, dan portofolio investasi dari sini.</p>
+</div>
+
+<!-- Stat Cards -->
+<div class="stat-grid">
+    <div class="stat-card">
+        <div class="stat-icon stat-icon-blue">
+            <i class="bi bi-people"></i>
+        </div>
+        <div class="stat-info">
+            <p class="stat-label">Total Nasabah</p>
+            <p class="stat-value">25</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon stat-icon-purple">
+            <i class="bi bi-person-gear"></i>
+        </div>
+        <div class="stat-info">
+            <p class="stat-label">Total User</p>
+            <p class="stat-value">26</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon stat-icon-info">
+            <i class="bi bi-box-seam"></i>
+        </div>
+        <div class="stat-info">
+            <p class="stat-label">Produk Investasi</p>
+            <p class="stat-value">5</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon stat-icon-yellow">
+            <i class="bi bi-cash-stack"></i>
+        </div>
+        <div class="stat-info">
+            <p class="stat-label">Total Transaksi</p>
+            <p class="stat-value">120</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon stat-icon-green">
+            <i class="bi bi-wallet2"></i>
+        </div>
+        <div class="stat-info">
+            <p class="stat-label">Nilai Portofolio</p>
+            <p class="stat-value stat-value-sm">Rp150 Jt</p>
+        </div>
+    </div>
+</div>
+
+<!-- Content Grid -->
+<div class="content-grid">
+
+    <!-- Transaksi Terbaru -->
+    <div class="section">
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="bi bi-clock-history"></i> Transaksi Terbaru</h3>
+                <a href="{{ url_for('admin_transaksi_index') }}" style="font-size:12.5px;color:var(--color-primary);font-weight:600;">
+                    Lihat Semua <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Nasabah</th>
+                            <th>Produk</th>
+                            <th class="text-center">Jenis</th>
+                            <th class="text-right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-secondary">13 Jun 2026</td>
+                            <td class="fw-600">Ahmad Rizki</td>
+                            <td>Reksadana Pasar Uang</td>
+                            <td class="text-center"><span class="badge badge-success">Beli</span></td>
+                            <td class="text-right td-bold">Rp1.000.000</td>
+                        </tr>
+                        <tr>
+                            <td class="td-secondary">14 Jun 2026</td>
+                            <td class="fw-600">Siti Aminah</td>
+                            <td>Obligasi Negara</td>
+                            <td class="text-center"><span class="badge badge-success">Beli</span></td>
+                            <td class="text-right td-bold">Rp2.000.000</td>
+                        </tr>
+                        <tr>
+                            <td class="td-secondary">15 Jun 2026</td>
+                            <td class="fw-600">Ahmad Rizki</td>
+                            <td>Saham ABC</td>
+                            <td class="text-center"><span class="badge badge-danger">Jual</span></td>
+                            <td class="text-right td-bold">Rp25.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ringkasan Portofolio -->
+    <div class="section">
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="bi bi-pie-chart"></i> Ringkasan Portofolio</h3>
+                <a href="{{ url_for('admin_portofolio_index') }}" style="font-size:12.5px;color:var(--color-primary);font-weight:600;">
+                    Detail <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nasabah</th>
+                            <th>Produk</th>
+                            <th class="text-right">Nilai</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-600">Ahmad Rizki</td>
+                            <td>Reksadana Pasar Uang</td>
+                            <td class="text-right td-bold text-primary-color">Rp1.000.000</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-600">Siti Aminah</td>
+                            <td>Obligasi Negara</td>
+                            <td class="text-right td-bold text-primary-color">Rp2.000.000</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-600">Ahmad Rizki</td>
+                            <td>Saham ABC</td>
+                            <td class="text-right td-bold text-primary-color">Rp2.000.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="padding:13px 20px;border-top:1px solid var(--border);background:var(--bg-main);display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:12.5px;color:var(--text-secondary);font-weight:600;">Total Seluruh Portofolio</span>
+                <span style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--color-primary);">Rp150.000.000</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

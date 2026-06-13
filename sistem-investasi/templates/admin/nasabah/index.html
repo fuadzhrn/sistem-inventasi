@@ -1,0 +1,100 @@
+{% extends "layouts/admin_base.html" %}
+
+{% block title %}Data Nasabah{% endblock %}
+{% block page_title %}Data Nasabah{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="page-header-left">
+        <h2>Data Nasabah</h2>
+        <p>Kelola seluruh data nasabah yang terdaftar dalam sistem.</p>
+    </div>
+    <a href="{{ url_for('admin_nasabah_tambah') }}" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> Tambah Nasabah
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3><i class="bi bi-people"></i> Daftar Nasabah</h3>
+        <span class="text-muted text-small">Total: 2 Nasabah</span>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="card-body" style="padding-bottom:0;">
+        <div class="table-toolbar">
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Cari nama, NIK, atau email...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabel -->
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="text-center" style="width:50px;">No</th>
+                    <th>Nama Nasabah</th>
+                    <th>NIK</th>
+                    <th>Email</th>
+                    <th>No HP</th>
+                    <th>Tanggal Daftar</th>
+                    <th class="text-center" style="width:130px;">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center td-secondary">1</td>
+                    <td>
+                        <div style="display:flex;align-items:center;gap:10px;">
+                            <div style="width:34px;height:34px;background:var(--bg-primary-light);color:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;font-weight:600;">AR</div>
+                            <span class="fw-600">Ahmad Rizki</span>
+                        </div>
+                    </td>
+                    <td class="td-mono">327xxxxxxxxxxxxx</td>
+                    <td>ahmad@gmail.com</td>
+                    <td>081234567890</td>
+                    <td class="td-secondary">12 Juni 2026</td>
+                    <td class="text-center">
+                        <div class="td-actions" style="justify-content:center;">
+                            <a href="{{ url_for('admin_nasabah_edit') }}" class="btn btn-warning btn-sm btn-icon" title="Edit">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <button class="btn btn-danger btn-sm btn-icon btn-hapus" data-nama="Ahmad Rizki" title="Hapus">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center td-secondary">2</td>
+                    <td>
+                        <div style="display:flex;align-items:center;gap:10px;">
+                            <div style="width:34px;height:34px;background:var(--bg-success-light);color:var(--color-success);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;font-weight:600;">SA</div>
+                            <span class="fw-600">Siti Aminah</span>
+                        </div>
+                    </td>
+                    <td class="td-mono">327xxxxxxxxxxxxx</td>
+                    <td>siti@gmail.com</td>
+                    <td>081298765432</td>
+                    <td class="td-secondary">13 Juni 2026</td>
+                    <td class="text-center">
+                        <div class="td-actions" style="justify-content:center;">
+                            <a href="{{ url_for('admin_nasabah_edit') }}" class="btn btn-warning btn-sm btn-icon" title="Edit">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <button class="btn btn-danger btn-sm btn-icon btn-hapus" data-nama="Siti Aminah" title="Hapus">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

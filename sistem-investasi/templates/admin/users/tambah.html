@@ -1,0 +1,90 @@
+{% extends "layouts/admin_base.html" %}
+
+{% block title %}Tambah User{% endblock %}
+{% block page_title %}Tambah User{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="page-header-left">
+        <h2>Tambah User</h2>
+        <p>Buat akun user baru untuk akses ke dalam sistem.</p>
+    </div>
+    <a href="{{ url_for('admin_users_index') }}" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Kembali
+    </a>
+</div>
+
+<div class="card form-card">
+    <div class="card-header">
+        <h3><i class="bi bi-person-plus"></i> Formulir Data User</h3>
+    </div>
+    <div class="card-body">
+        <form action="#" method="POST">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label class="form-label" for="username">
+                        Username <span class="required">*</span>
+                    </label>
+                    <input type="text" id="username" name="username"
+                           class="form-control" placeholder="Masukkan username">
+                    <span class="form-hint">Hanya huruf kecil, angka, dan garis bawah.</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">
+                        Password <span class="required">*</span>
+                    </label>
+                    <input type="password" id="password" name="password"
+                           class="form-control" placeholder="Masukkan password">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="role">
+                        Role <span class="required">*</span>
+                    </label>
+                    <select id="role" name="role" class="form-control">
+                        <option value="" disabled selected>-- Pilih Role --</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="nasabah_id">
+                        Pilih Nasabah
+                    </label>
+                    <select id="nasabah_id" name="nasabah_id" class="form-control">
+                        <option value="" disabled selected>-- Pilih Nasabah --</option>
+                        <option value="1">Ahmad Rizki</option>
+                        <option value="2">Siti Aminah</option>
+                    </select>
+                    <span class="form-hint">Kosongkan jika user adalah Admin.</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="status">
+                        Status <span class="required">*</span>
+                    </label>
+                    <select id="status" name="status" class="form-control">
+                        <option value="aktif" selected>Aktif</option>
+                        <option value="nonaktif">Nonaktif</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check-lg"></i> Simpan
+                </button>
+                <a href="{{ url_for('admin_users_index') }}" class="btn btn-secondary">
+                    <i class="bi bi-x"></i> Batal
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

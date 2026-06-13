@@ -1,0 +1,108 @@
+{% extends "layouts/admin_base.html" %}
+
+{% block title %}Data Portofolio{% endblock %}
+{% block page_title %}Data Portofolio{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="page-header-left">
+        <h2>Data Portofolio</h2>
+        <p>Ringkasan portofolio investasi seluruh nasabah yang terdaftar.</p>
+    </div>
+</div>
+
+<!-- Ringkasan Portofolio -->
+<div class="porto-stat-grid">
+    <div class="porto-stat-item">
+        <p class="porto-stat-label"><i class="bi bi-people" style="color:var(--color-primary);margin-right:4px;"></i>Total Nasabah Aktif</p>
+        <p class="porto-stat-value">25</p>
+    </div>
+    <div class="porto-stat-item">
+        <p class="porto-stat-label"><i class="bi bi-layers" style="color:var(--color-warning);margin-right:4px;"></i>Total Produk Dimiliki</p>
+        <p class="porto-stat-value">40</p>
+    </div>
+    <div class="porto-stat-item">
+        <p class="porto-stat-label"><i class="bi bi-wallet2" style="color:var(--color-success);margin-right:4px;"></i>Total Nilai Portofolio</p>
+        <p class="porto-stat-value primary">Rp150 Jt</p>
+    </div>
+</div>
+
+<!-- Tabel Portofolio -->
+<div class="card">
+    <div class="card-header">
+        <h3><i class="bi bi-pie-chart"></i> Portofolio Semua Nasabah</h3>
+        <div class="search-box" style="min-width:unset;width:220px;">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Cari nasabah...">
+        </div>
+    </div>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="text-center" style="width:44px;">No</th>
+                    <th>Nama Nasabah</th>
+                    <th>Produk Investasi</th>
+                    <th class="text-center">Jenis</th>
+                    <th class="text-right">Total Unit</th>
+                    <th class="text-right">Harga Unit</th>
+                    <th class="text-right">Nilai Portofolio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center td-secondary">1</td>
+                    <td>
+                        <div style="display:flex;align-items:center;gap:9px;">
+                            <div style="width:32px;height:32px;background:var(--bg-primary-light);color:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;font-weight:700;">AR</div>
+                            <span class="fw-600">Ahmad Rizki</span>
+                        </div>
+                    </td>
+                    <td>Reksadana Pasar Uang</td>
+                    <td class="text-center"><span class="badge badge-info">Reksadana</span></td>
+                    <td class="text-right td-bold">10</td>
+                    <td class="text-right td-mono">Rp100.000</td>
+                    <td class="text-right td-bold text-primary-color">Rp1.000.000</td>
+                </tr>
+                <tr>
+                    <td class="text-center td-secondary">2</td>
+                    <td>
+                        <div style="display:flex;align-items:center;gap:9px;">
+                            <div style="width:32px;height:32px;background:var(--bg-success-light);color:var(--color-success);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;font-weight:700;">SA</div>
+                            <span class="fw-600">Siti Aminah</span>
+                        </div>
+                    </td>
+                    <td>Obligasi Negara</td>
+                    <td class="text-center"><span class="badge badge-warning">Obligasi</span></td>
+                    <td class="text-right td-bold">2</td>
+                    <td class="text-right td-mono">Rp1.000.000</td>
+                    <td class="text-right td-bold text-primary-color">Rp2.000.000</td>
+                </tr>
+                <tr>
+                    <td class="text-center td-secondary">3</td>
+                    <td>
+                        <div style="display:flex;align-items:center;gap:9px;">
+                            <div style="width:32px;height:32px;background:var(--bg-primary-light);color:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;font-weight:700;">AR</div>
+                            <span class="fw-600">Ahmad Rizki</span>
+                        </div>
+                    </td>
+                    <td>Saham ABC</td>
+                    <td class="text-center"><span class="badge badge-danger">Saham</span></td>
+                    <td class="text-right td-bold">25</td>
+                    <td class="text-right td-mono">Rp80.000</td>
+                    <td class="text-right td-bold text-primary-color">Rp2.000.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-summary">
+        <div class="table-summary-item">
+            <p class="table-summary-label">Total Nilai Portofolio</p>
+            <p class="table-summary-value text-primary-color">Rp150.000.000</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
