@@ -1,0 +1,202 @@
+{% extends "layouts/user_base.html" %}
+
+{% block title %}Portofolio Saya{% endblock %}
+{% block page_title %}Portofolio Saya{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h2>Portofolio Saya</h2>
+    <p>Ringkasan seluruh aset investasi yang sedang Anda miliki.</p>
+</div>
+
+<!-- Ringkasan Portofolio -->
+<div class="porto-summary">
+    <div class="porto-summary-item">
+        <p class="porto-summary-label">
+            <i class="bi bi-wallet2" style="color:var(--color-primary);margin-right:4px;"></i>
+            Total Nilai Portofolio
+        </p>
+        <p class="porto-summary-value primary">Rp5.000.000</p>
+    </div>
+    <div class="porto-summary-item">
+        <p class="porto-summary-label">
+            <i class="bi bi-box-seam" style="color:var(--color-success);margin-right:4px;"></i>
+            Total Produk
+        </p>
+        <p class="porto-summary-value">3</p>
+    </div>
+    <div class="porto-summary-item">
+        <p class="porto-summary-label">
+            <i class="bi bi-layers" style="color:var(--color-warning);margin-right:4px;"></i>
+            Total Unit
+        </p>
+        <p class="porto-summary-value">37</p>
+    </div>
+</div>
+
+<!-- Tabel Portofolio -->
+<div class="card">
+    <div class="card-header">
+        <h3><i class="bi bi-pie-chart"></i> Detail Portofolio</h3>
+        <span style="font-size:12px;color:var(--text-secondary);">Diperbarui: 15 Juni 2026</span>
+    </div>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="text-center" style="width:48px;">No</th>
+                    <th>Produk Investasi</th>
+                    <th>Jenis Produk</th>
+                    <th class="text-right">Total Unit</th>
+                    <th class="text-right">Harga Unit</th>
+                    <th class="text-right">Nilai Portofolio</th>
+                    <th class="text-center">Risiko</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="text-center td-secondary">1</td>
+                    <td>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div style="width:38px;height:38px;background:var(--bg-primary-light);color:var(--color-primary);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">
+                                <i class="bi bi-cash-coin"></i>
+                            </div>
+                            <div>
+                                <p class="fw-600">Reksadana Pasar Uang</p>
+                                <p class="td-secondary text-small">Diakuisisi: 13 Jun 2026</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-info">Reksadana</span></td>
+                    <td class="text-right td-bold">10 Unit</td>
+                    <td class="text-right td-mono">Rp100.000</td>
+                    <td class="text-right">
+                        <p class="td-bold text-primary-color">Rp1.000.000</p>
+                        <p class="text-small td-secondary">20% portofolio</p>
+                    </td>
+                    <td class="text-center"><span class="badge badge-success">Rendah</span></td>
+                </tr>
+
+                <tr>
+                    <td class="text-center td-secondary">2</td>
+                    <td>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div style="width:38px;height:38px;background:var(--bg-warning-light);color:#B45309;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <div>
+                                <p class="fw-600">Obligasi Negara</p>
+                                <p class="td-secondary text-small">Diakuisisi: 14 Jun 2026</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-warning">Obligasi</span></td>
+                    <td class="text-right td-bold">2 Unit</td>
+                    <td class="text-right td-mono">Rp1.000.000</td>
+                    <td class="text-right">
+                        <p class="td-bold text-primary-color">Rp2.000.000</p>
+                        <p class="text-small td-secondary">40% portofolio</p>
+                    </td>
+                    <td class="text-center"><span class="badge badge-warning">Sedang</span></td>
+                </tr>
+
+                <tr>
+                    <td class="text-center td-secondary">3</td>
+                    <td>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div style="width:38px;height:38px;background:var(--bg-danger-light);color:var(--color-danger);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">
+                                <i class="bi bi-bar-chart-line"></i>
+                            </div>
+                            <div>
+                                <p class="fw-600">Saham ABC</p>
+                                <p class="td-secondary text-small">Diakuisisi: 12 Jun 2026</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-danger">Saham</span></td>
+                    <td class="text-right td-bold">25 Unit</td>
+                    <td class="text-right td-mono">Rp80.000</td>
+                    <td class="text-right">
+                        <p class="td-bold text-primary-color">Rp2.000.000</p>
+                        <p class="text-small td-secondary">40% portofolio</p>
+                    </td>
+                    <td class="text-center"><span class="badge badge-danger">Tinggi</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Table Footer -->
+    <div style="padding:16px 22px;background:var(--bg-main);border-top:2px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+            <div>
+                <p style="font-size:11.5px;color:var(--text-secondary);margin-bottom:2px;">Total Produk</p>
+                <p style="font-weight:700;font-size:15px;">3 Produk</p>
+            </div>
+            <div>
+                <p style="font-size:11.5px;color:var(--text-secondary);margin-bottom:2px;">Total Unit</p>
+                <p style="font-weight:700;font-size:15px;">37 Unit</p>
+            </div>
+        </div>
+        <div style="text-align:right;">
+            <p style="font-size:11.5px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;">Total Nilai Portofolio</p>
+            <p style="font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;color:var(--color-primary);">Rp5.000.000</p>
+        </div>
+    </div>
+</div>
+
+<!-- Distribusi Aset Info -->
+<div class="card mt-4">
+    <div class="card-header">
+        <h3><i class="bi bi-pie-chart-fill"></i> Distribusi Aset</h3>
+    </div>
+    <div class="card-body">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+
+            <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                    <span style="font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;">
+                        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--color-primary);"></span>
+                        Reksadana Pasar Uang
+                    </span>
+                    <span style="font-size:13px;font-weight:600;color:var(--color-primary);">20%</span>
+                </div>
+                <div style="height:8px;background:var(--border);border-radius:8px;overflow:hidden;">
+                    <div style="width:20%;height:100%;background:var(--color-primary);border-radius:8px;"></div>
+                </div>
+            </div>
+
+            <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                    <span style="font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;">
+                        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--color-warning);"></span>
+                        Obligasi Negara
+                    </span>
+                    <span style="font-size:13px;font-weight:600;color:#B45309;">40%</span>
+                </div>
+                <div style="height:8px;background:var(--border);border-radius:8px;overflow:hidden;">
+                    <div style="width:40%;height:100%;background:var(--color-warning);border-radius:8px;"></div>
+                </div>
+            </div>
+
+            <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                    <span style="font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;">
+                        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--color-danger);"></span>
+                        Saham ABC
+                    </span>
+                    <span style="font-size:13px;font-weight:600;color:var(--color-danger);">40%</span>
+                </div>
+                <div style="height:8px;background:var(--border);border-radius:8px;overflow:hidden;">
+                    <div style="width:40%;height:100%;background:var(--color-danger);border-radius:8px;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

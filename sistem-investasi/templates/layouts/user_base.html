@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistem Investasi{% endblock %} — Nasabah</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Logo / Branding -->
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-name">InvestSi</span>
+                <span class="brand-tagline">Portofolio Anda</span>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Navigation Menu -->
+        <nav class="sidebar-nav">
+            <p class="nav-label">Menu Utama</p>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="{{ url_for('user_dashboard') }}" class="nav-link" data-path="/user/dashboard">
+                        <i class="bi bi-speedometer2 nav-icon"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('user_profil') }}" class="nav-link" data-path="/user/profil">
+                        <i class="bi bi-person-circle nav-icon"></i>
+                        <span class="nav-text">Profil Saya</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('user_produk') }}" class="nav-link" data-path="/user/produk">
+                        <i class="bi bi-box-seam nav-icon"></i>
+                        <span class="nav-text">Produk Investasi</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('user_transaksi') }}" class="nav-link" data-path="/user/transaksi">
+                        <i class="bi bi-clock-history nav-icon"></i>
+                        <span class="nav-text">Riwayat Transaksi</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('user_portofolio') }}" class="nav-link" data-path="/user/portofolio">
+                        <i class="bi bi-pie-chart nav-icon"></i>
+                        <span class="nav-text">Portofolio Saya</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-divider"></div>
+            <p class="nav-label">Akun</p>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link nav-link-danger">
+                        <i class="bi bi-box-arrow-right nav-icon"></i>
+                        <span class="nav-text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </aside>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ===== MAIN WRAPPER ===== -->
+    <div class="main-wrapper" id="mainWrapper">
+
+        <!-- ===== TOPBAR ===== -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="btn-toggle-sidebar" id="btnToggleSidebar" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h1 class="page-title">{% block page_title %}Halaman{% endblock %}</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-user">
+                    <div class="user-avatar">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Ahmad Rizki</span>
+                        <span class="user-role">Nasabah</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== PAGE CONTENT ===== -->
+        <main class="content-area">
+            {% block content %}{% endblock %}
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="content-footer">
+            <p>&copy; 2026 Sistem Manajemen Nasabah, Transaksi &amp; Portofolio Investasi. Hak cipta dilindungi.</p>
+        </footer>
+
+    </div>
+
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/user.js') }}"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

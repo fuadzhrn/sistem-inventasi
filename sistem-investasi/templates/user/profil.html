@@ -1,0 +1,90 @@
+{% extends "layouts/user_base.html" %}
+
+{% block title %}Profil Saya{% endblock %}
+{% block page_title %}Profil Saya{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h2>Profil Nasabah</h2>
+    <p>Informasi lengkap data pribadi Anda yang terdaftar di sistem.</p>
+</div>
+
+<div style="max-width: 780px;">
+    <div class="card">
+        <div class="card-body">
+
+            <!-- Avatar & Nama -->
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                <div class="profile-meta">
+                    <h2>Ahmad Rizki</h2>
+                    <p><i class="bi bi-circle-fill" style="font-size:8px;color:var(--color-success);vertical-align:middle;margin-right:4px;"></i>Nasabah Aktif &mdash; Terdaftar sejak 12 Juni 2026</p>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div style="height:1px;background:var(--border);margin-bottom:24px;"></div>
+
+            <!-- Detail Grid -->
+            <div class="profile-grid">
+
+                <div class="profile-item">
+                    <p class="profile-item-label">
+                        <i class="bi bi-person-badge"></i> Nama Lengkap
+                    </p>
+                    <p class="profile-item-value">Ahmad Rizki</p>
+                </div>
+
+                <div class="profile-item">
+                    <p class="profile-item-label">
+                        <i class="bi bi-credit-card-2-front"></i> NIK
+                    </p>
+                    <p class="profile-item-value td-mono">327xxxxxxxxxxxxx</p>
+                </div>
+
+                <div class="profile-item">
+                    <p class="profile-item-label">
+                        <i class="bi bi-envelope"></i> Alamat Email
+                    </p>
+                    <p class="profile-item-value">ahmad@gmail.com</p>
+                </div>
+
+                <div class="profile-item">
+                    <p class="profile-item-label">
+                        <i class="bi bi-telephone"></i> Nomor HP
+                    </p>
+                    <p class="profile-item-value">081234567890</p>
+                </div>
+
+                <div class="profile-item">
+                    <p class="profile-item-label">
+                        <i class="bi bi-geo-alt"></i> Alamat
+                    </p>
+                    <p class="profile-item-value">Jakarta</p>
+                </div>
+
+                <div class="profile-item">
+                    <p class="profile-item-label">
+                        <i class="bi bi-calendar-check"></i> Tanggal Daftar
+                    </p>
+                    <p class="profile-item-value">12 Juni 2026</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Card Footer Info -->
+        <div style="padding:14px 22px;background:var(--bg-main);border-top:1px solid var(--border);border-radius:0 0 var(--radius-lg) var(--radius-lg);">
+            <p style="font-size:12px;color:var(--text-secondary);">
+                <i class="bi bi-info-circle" style="color:var(--color-primary);"></i>
+                Untuk mengubah data profil, silakan hubungi tim layanan nasabah kami.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "layouts/user_base.html" %}
+
+{% block title %}Riwayat Transaksi{% endblock %}
+{% block page_title %}Riwayat Transaksi{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h2>Riwayat Transaksi</h2>
+    <p>Daftar seluruh transaksi investasi yang telah Anda lakukan.</p>
+</div>
+
+<!-- Summary Strip -->
+<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px;">
+    <div style="display:flex;align-items:center;gap:8px;background:var(--bg-success-light);color:var(--color-success);padding:8px 16px;border-radius:var(--radius-md);font-size:13px;font-weight:600;">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+        2 Transaksi Beli
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;background:var(--bg-danger-light);color:var(--color-danger);padding:8px 16px;border-radius:var(--radius-md);font-size:13px;font-weight:600;">
+        <i class="bi bi-arrow-up-circle-fill"></i>
+        1 Transaksi Jual
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;background:var(--bg-primary-light);color:var(--color-primary);padding:8px 16px;border-radius:var(--radius-md);font-size:13px;font-weight:600;">
+        <i class="bi bi-receipt"></i>
+        Total: 3 Transaksi
+    </div>
+</div>
+
+<!-- Tabel Transaksi -->
+<div class="card">
+    <div class="card-header">
+        <h3><i class="bi bi-clock-history"></i> Daftar Transaksi</h3>
+        <span style="font-size:12px;color:var(--text-secondary);">Menampilkan 3 dari 12 transaksi</span>
+    </div>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="text-center" style="width:48px;">No</th>
+                    <th>Tanggal</th>
+                    <th>Produk Investasi</th>
+                    <th class="text-center">Jenis</th>
+                    <th class="text-right">Jumlah Unit</th>
+                    <th class="text-right">Harga Unit</th>
+                    <th class="text-right">Total Transaksi</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="text-center td-secondary">1</td>
+                    <td>
+                        <p style="font-weight:500;">13 Juni 2026</p>
+                        <p class="td-secondary text-small">08:30 WIB</p>
+                    </td>
+                    <td>
+                        <p class="fw-600">Reksadana Pasar Uang</p>
+                        <p class="td-secondary text-small"><span class="badge badge-info" style="font-size:10.5px;padding:2px 8px;">Reksadana</span></p>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge badge-success">
+                            <i class="bi bi-arrow-down" style="margin-right:3px;font-size:10px;"></i>Beli
+                        </span>
+                    </td>
+                    <td class="text-right td-bold">10 Unit</td>
+                    <td class="text-right td-mono">Rp100.000</td>
+                    <td class="text-right td-bold text-primary-color">Rp1.000.000</td>
+                </tr>
+
+                <tr>
+                    <td class="text-center td-secondary">2</td>
+                    <td>
+                        <p style="font-weight:500;">14 Juni 2026</p>
+                        <p class="td-secondary text-small">10:15 WIB</p>
+                    </td>
+                    <td>
+                        <p class="fw-600">Obligasi Negara</p>
+                        <p class="td-secondary text-small"><span class="badge badge-warning" style="font-size:10.5px;padding:2px 8px;">Obligasi</span></p>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge badge-success">
+                            <i class="bi bi-arrow-down" style="margin-right:3px;font-size:10px;"></i>Beli
+                        </span>
+                    </td>
+                    <td class="text-right td-bold">2 Unit</td>
+                    <td class="text-right td-mono">Rp1.000.000</td>
+                    <td class="text-right td-bold text-primary-color">Rp2.000.000</td>
+                </tr>
+
+                <tr>
+                    <td class="text-center td-secondary">3</td>
+                    <td>
+                        <p style="font-weight:500;">15 Juni 2026</p>
+                        <p class="td-secondary text-small">14:22 WIB</p>
+                    </td>
+                    <td>
+                        <p class="fw-600">Saham ABC</p>
+                        <p class="td-secondary text-small"><span class="badge badge-danger" style="font-size:10.5px;padding:2px 8px;">Saham</span></p>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge badge-danger">
+                            <i class="bi bi-arrow-up" style="margin-right:3px;font-size:10px;"></i>Jual
+                        </span>
+                    </td>
+                    <td class="text-right td-bold">5 Unit</td>
+                    <td class="text-right td-mono">Rp5.000</td>
+                    <td class="text-right td-bold text-danger">Rp25.000</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Table Footer Total -->
+    <div style="padding:14px 22px;background:var(--bg-main);border-top:2px solid var(--border);display:flex;justify-content:flex-end;align-items:center;gap:24px;flex-wrap:wrap;">
+        <div style="text-align:right;">
+            <p style="font-size:11.5px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;">Total Pembelian</p>
+            <p style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--color-success);">Rp3.000.000</p>
+        </div>
+        <div style="width:1px;height:36px;background:var(--border);"></div>
+        <div style="text-align:right;">
+            <p style="font-size:11.5px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;">Total Penjualan</p>
+            <p style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--color-danger);">Rp25.000</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
